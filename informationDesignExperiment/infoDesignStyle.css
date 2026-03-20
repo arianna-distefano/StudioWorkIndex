@@ -4,9 +4,9 @@
 /*define custom variables*/
 :root{
     /* Late Night Bath Palette by sukinapan https://lospec.com/palette-list/late-night-bath */
-    --col01: #282d3c;
+    --col01: #000000;
     --col02: #f0f6f0;
-    --col03: #ffc4b8;
+    --col03: #ffffff;
     --col04: #5b5d70;
     --col05: #74838c;
     --col06: #f69197;
@@ -44,4 +44,64 @@ dialog[open] {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
+}
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 25rem;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #e2ade6;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -8px; /* Centers thumb on the track */
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #ffffff;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #e2ade6;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #ffffff;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #ffffff;
+    outline-offset: 0.125rem;
 }
