@@ -1,37 +1,37 @@
-//find elements to use
-const introDialog = document.getElementById("introDialog");
-const dialogCloseButton = document.getElementById("closeDialog");
+// find elements to use
+const introDialog = document.getElementById("intro-dialog");
+const dialogCloseButton = document.getElementById("dialog-close-button");
+const playButton = document.getElementById("play-button");
 
-//intro dialog set up
+// intro dialog setup
 introDialog.showModal();
 
-dialogCloseButton.addEventListener("click",closeDialog);
+dialogCloseButton.addEventListener("click", closeDialog);
 
-function closeDialog() {}
-introDialog.close();
-Tone.start();
+function closeDialog(){
+    introDialog.close();
+    Tone.start();
 }
 
-//tone synth init
-const synth = new Tone.synth().toDestination():
+// tone synth init
+const synth = new Tone.Synth().toDestination();
 
-)
-
-//play sound with tone
+// play sound with tone
 function playNote(){
-    synth.triggerAttackRelease("c4","8n");
+    synth.triggerAttackRelease("F4", "8n");
 }
-//playButton.addEventListener("click",playNote);
+
+//playButton.addEventListener("click", playNote);
 
 function startNote(){
-    synth.triggerAttack("c4");
-    document.body.stylebackgroundColor ="Red";
+    synth.triggerAttack("F4");
+    document.body.style.backgroundColor = "pink";
 }
 
 function endNote(){
     synth.triggerRelease();
-    document.body.stylebackgroundColor ="white";
+    document.body.style.backgroundColor = "grey";
 }
 
-playButton.addEventListener("mousedown",startNote);
-playButton.addEventListener("mouseup",endNote);
+playButton.addEventListener("mousedown", startNote);
+playButton.addEventListener("mouseup", endNote);
